@@ -60,14 +60,12 @@ export default function TopNav({ profile, userEmail }: { profile: any, userEmail
         </button>
         
         <DropdownMenu>
-          <DropdownMenuTrigger>
-            <div className="w-10 h-10 rounded-full border-2 border-white/10 bg-white/5 overflow-hidden flex items-center justify-center hover:border-[#D4F87A]/50 transition-colors cursor-pointer">
-              {profile?.avatar_url ? (
-                <img src={profile.avatar_url} alt="Profile" className="w-full h-full object-cover" />
-              ) : (
-                <span className="font-bold text-sm text-white">{profile?.full_name?.charAt(0) || userEmail?.charAt(0).toUpperCase()}</span>
-              )}
-            </div>
+          <DropdownMenuTrigger className="w-10 h-10 rounded-full border-2 border-white/10 bg-white/5 overflow-hidden flex items-center justify-center hover:border-[#D4F87A]/50 transition-colors cursor-pointer outline-none">
+            {profile?.avatar_url ? (
+              <img src={profile.avatar_url} alt="Profile" className="w-full h-full object-cover" />
+            ) : (
+              <span className="font-bold text-sm text-white">{profile?.full_name?.charAt(0) || userEmail?.charAt(0).toUpperCase()}</span>
+            )}
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56 mr-4 bg-[#040A04]/90 backdrop-blur-xl border-[#D4F87A]/20 text-white">
             <DropdownMenuGroup>
