@@ -302,7 +302,9 @@ export default async function DashboardPage() {
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#D4F87A]">New Feature</p>
               </div>
               <h4 className="text-2xl font-bold leading-tight mb-4 text-white drop-shadow-md">AI-Powered Mock Interviews</h4>
-              <button className="btn-verdant px-6 py-2.5 rounded-full text-sm font-bold transition-all">Try Now</button>
+              <Link href="/dashboard/practice">
+                <button className="btn-verdant px-6 py-2.5 rounded-full text-sm font-bold transition-all">Try Now</button>
+              </Link>
             </div>
           </div>
         </section>
