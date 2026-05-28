@@ -1,7 +1,4 @@
-import { lazy, Suspense } from 'react';
 import Link from 'next/link';
-
-const InstancedText = lazy(() => import('@/components/InstancedText'));
 
 const footerLinks = {
   Product: ['AI Interviews', 'Roadmaps', 'Pricing', 'Changelog'],
@@ -12,17 +9,9 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="relative min-h-[600px] bg-deep-forest overflow-hidden">
-      {/* 3D Instanced Text Background */}
-      <div className="absolute inset-0">
-        <Suspense
-          fallback={
-            <div className="w-full h-full bg-deep-forest" />
-          }
-        >
-          <InstancedText videoSrc="/videos/hero-video.mp4" />
-        </Suspense>
-      </div>
+    <footer className="relative min-h-[400px] bg-deep-forest overflow-hidden">
+      {/* Simple gradient background instead of broken WebGL */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
       {/* Footer Content Overlay */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-24">
@@ -82,3 +71,4 @@ export default function Footer() {
     </footer>
   );
 }
+
