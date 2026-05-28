@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -69,16 +70,18 @@ export default function TopNav({ profile, userEmail }: { profile: any, userEmail
             </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56 mr-4 bg-[#040A04]/90 backdrop-blur-xl border-[#D4F87A]/20 text-white">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator className="bg-white/10" />
-            <DropdownMenuItem onClick={() => router.push('/dashboard/profile')} className="cursor-pointer hover:bg-white/10 focus:bg-white/10 focus:text-white">
-              <span className="material-symbols-outlined mr-2 text-sm">person</span>
-              Profile
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => toast("Settings coming soon")} className="cursor-pointer hover:bg-white/10 focus:bg-white/10 focus:text-white">
-              <span className="material-symbols-outlined mr-2 text-sm">settings</span>
-              Settings
-            </DropdownMenuItem>
+            <DropdownMenuGroup>
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator className="bg-white/10" />
+              <DropdownMenuItem onClick={() => router.push('/dashboard/profile')} className="cursor-pointer hover:bg-white/10 focus:bg-white/10 focus:text-white">
+                <span className="material-symbols-outlined mr-2 text-sm">person</span>
+                Profile
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => toast("Settings coming soon")} className="cursor-pointer hover:bg-white/10 focus:bg-white/10 focus:text-white">
+                <span className="material-symbols-outlined mr-2 text-sm">settings</span>
+                Settings
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
             <DropdownMenuSeparator className="bg-white/10" />
             <DropdownMenuItem onClick={handleSignOut} className="cursor-pointer text-red-400 hover:bg-red-500/10 focus:bg-red-500/10 focus:text-red-400">
               <span className="material-symbols-outlined mr-2 text-sm">logout</span>
